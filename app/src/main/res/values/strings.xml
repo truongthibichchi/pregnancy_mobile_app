@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pregnancy</string>
+    <string name="get_all">Get all</string>
+    <string name="get_by_title">Get by title</string>
+</resources>
