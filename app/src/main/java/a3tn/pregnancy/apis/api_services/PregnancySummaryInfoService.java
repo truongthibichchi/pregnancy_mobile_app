@@ -11,8 +11,8 @@ public interface PregnancySummaryInfoService {
     @GET("get-all-summary-info")
     Observable<JsonObject> getAllSummaryInfo();
 
-    @GET("get-summary-info-by-title")
-    Observable<JsonObject> getSummaryInfoByTitle(
-            @Query("title") String cm
+    @GET("get-summary-info-by-week")
+    Observable<JsonObject> getSummaryInfoByWeek(
+            @Query("week") String week
     );
 }
