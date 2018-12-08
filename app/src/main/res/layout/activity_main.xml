@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/drawer">
 
-    <Button
-        android:id="@+id/btn-get-all"
+    <android.support.design.widget.NavigationView
+        app:headerLayout="@layout/header"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/get_all" />
-
-    <EditText
-        android:id="@+id/txt-title"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:itemTextColor="@color/darkgray"
+        app:itemIconTint="@color/darkgray"
+        app:menu="@menu/drawermenu"
+        android:layout_gravity="start"
+        >
+    </android.support.design.widget.NavigationView>
+    
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:id="@+id/listview_summary_info"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="#d1d1d1"
+        >
+    </ListView>
 
-    <Button
-        android:id="@+id/btn-get-by-id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/get_by_title" />
-
-    <TextView
-        android:id="@+id/txt-response"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+</android.support.v4.widget.DrawerLayout>

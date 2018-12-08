@@ -1,5 +1,22 @@
 <resources>
-    <string name="app_name">Pregnancy</string>
-    <string name="get_all">Get all</string>
-    <string name="get_by_title">Get by title</string>
+    <string name="app_name">pregnancy app</string>
+    <string name="summary_info">Tổng quan thai kỳ</string>
+    <string name="food">Món ăn</string>
+    <string name="sport">Thể Thao</string>
+    <string name="plan">Ghi chú của mẹ</string>
+    <string name="mom_image">Hình ảnh</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="input_full_name">Nhập Họ Tên</string>
+    <string name="input_email_register">Nhập Email Đăng Nhập</string>
+    <string name="input_pass">Nhập Mật Khẩu</string>
+    <string name="input_date">Nhập Ngày Đậu Thai (yyyy-mm-dd)</string>
+    <string name="note_register">Vui lòng đăng nhập với email mà bạn sử dụng!</string>
+    <string name="backtologin">Quay Lại</string>
+    <string name="register_account">Đăng Ký</string>
+    <string name="lostpass">Mất Mật Khẩu?</string>
+    <string name="input_email">Nhập Email</string>
+    <string name="login_title">Đăng Nhập</string>
+    <string name="fblogin">Đăng Nhập FaceBook</string>
+    <string name="register_new">Đăng Ký Mới</string>
 </resources>

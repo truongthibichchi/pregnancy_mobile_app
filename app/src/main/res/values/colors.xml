@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="darkgray">#6c6c6c</color>
+
+    <color name="fb_backgound">#3b5998</color>
+    <color name="gg_backgound">#d34836</color>
+    <color name="home_color">#D81B60</color>
+    <color name="com_facebook_blue">#3B5998</color>
+    <color name="black">#000000</color>
 </resources>
