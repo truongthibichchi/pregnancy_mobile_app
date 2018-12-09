@@ -11,8 +11,23 @@ public interface SummaryInfoService {
     @GET("get-all-summary-info")
     Observable<JsonObject> getAllSummaryInfo();
 
-    @GET("get-summary-info-by-week")
-    Observable<JsonObject> getSummaryInfoByWeekId(
+    @GET("get-baby-info-by-week")
+    Observable<JsonObject> getBabyInfoByWeek(
+            @Query("week") int weekId
+    );
+
+    @GET("get-mom-info-by-week")
+    Observable<JsonObject> getMomByWeek(
+            @Query("week") int weekId
+    );
+
+    @GET("get-symptom-by-week")
+    Observable<JsonObject> getSymptomByWeek(
+            @Query("week") int weekId
+    );
+
+    @GET("get-advice-by-week")
+    Observable<JsonObject> getAdviceByWeek(
             @Query("week") int weekId
     );
 }

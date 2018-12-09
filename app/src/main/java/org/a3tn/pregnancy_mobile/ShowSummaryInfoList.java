@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class ShowSummaryInfoList extends AppCompatActivity {
     private ListView lvSummaryInfo;
     private List<SummaryInfo> mSummaryInfoList;
     private ListViewSummaryInfoAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +47,7 @@ public class ShowSummaryInfoList extends AppCompatActivity {
         lvSummaryInfo.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(ShowSummaryInfoList.this, WeekDetails.class);
             int weekId = mSummaryInfoList.get(position).getId();
-            intent.putExtra("weekId", weekId);
-            //Toast.makeText(getApplicationContext(),"item thứ "+mSummaryInfoList.get(position).getId(),Toast.LENGTH_SHORT ).show();
+            intent.putExtra("id", weekId);
             startActivity(intent);
         });
     }
@@ -76,7 +77,7 @@ public class ShowSummaryInfoList extends AppCompatActivity {
                         },
                         err -> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
                 );
-        createFakeData();
+        //createFakeData();
 
     }
 
