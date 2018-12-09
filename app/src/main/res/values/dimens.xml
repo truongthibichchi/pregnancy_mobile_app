@@ -6,5 +6,7 @@
     <!--Text-->
     <dimen name="txt_14sp">14sp</dimen>
     <dimen name="normal_text">15sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
 
 </resources>

@@ -12,7 +12,7 @@ public interface SummaryInfoService {
     Observable<JsonObject> getAllSummaryInfo();
 
     @GET("get-summary-info-by-week")
-    Observable<JsonObject> getSummaryInfoByWeek(
-            @Query("week") String week
+    Observable<JsonObject> getSummaryInfoByWeekId(
+            @Query("week") int weekId
     );
 }

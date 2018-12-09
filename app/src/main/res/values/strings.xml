@@ -19,4 +19,9 @@
     <string name="login_title">Đăng Nhập</string>
     <string name="fblogin">Đăng Nhập FaceBook</string>
     <string name="register_new">Đăng Ký Mới</string>
+    <string name="title_activity_show_summary_info_list">ShowSummaryInfoList</string>
+    <string name="title_baby_info">Tình trạng của bé</string>
+    <string name="title_mom_info">Tình trạng của mẹ</string>
+    <string name="title_symptom">Triệu chứng</string>
+    <string name="title_advice">Lời khuyên</string>
 </resources>

@@ -19,15 +19,6 @@
         >
     </android.support.design.widget.NavigationView>
     
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listview_summary_info"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:divider="#d1d1d1"
-        >
-    </ListView>
+
 
 </android.support.v4.widget.DrawerLayout>

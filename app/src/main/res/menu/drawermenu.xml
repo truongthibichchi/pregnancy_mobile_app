@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/summary_info" android:title="@string/summary_info" ></item>
-    <item android:id="@+id/glossary" android:title="Tra cứu thuật ngữ"></item>
-    <item android:id="@+id/food" android:title="@string/food"></item>
-    <item android:id="@+id/sport" android:title="@string/sport"></item>
-    <item android:id="@+id/plan" android:title="@string/plan"></item>
-    <item android:id="@+id/mom_image" android:title="@string/mom_image"></item>
+    <item
+        android:id="@+id/summary_info"
+        android:icon="@drawable/mom_icon"
+        android:title="@string/summary_info">
+    </item>
+
+    <item
+        android:id="@+id/glossary"
+        android:title="Tra cứu thuật ngữ">
+    </item>
+    <item
+        android:id="@+id/food"
+        android:title="@string/food">
+    </item>
+
+    <item
+        android:id="@+id/sport"
+        android:title="@string/sport">
+    </item>
+
+    <item
+        android:id="@+id/plan"
+        android:title="@string/plan">
+    </item>
+
+    <item
+        android:id="@+id/mom_image"
+        android:title="@string/mom_image">
+    </item>
 
 </menu>

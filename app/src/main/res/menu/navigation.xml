@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_baby"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_baby_info" />
+
+    <item
+        android:id="@+id/navigation_mom"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_mom_info" />
+
+    <item
+        android:id="@+id/navigation_symptom"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_symptom" />
+    <item
+        android:id="@+id/navigation_advice"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_advice" />
+
+
+</menu>
