@@ -1,5 +1,8 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,10 +28,11 @@ import java.util.List;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private NavigationView mNavigation;
 
 
 
@@ -43,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mNavigation = findViewById(R.id.navigation_menu);
+        mNavigation.setNavigationItemSelectedListener(this);
 
 
 
@@ -63,4 +70,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.menu_summary_info:
+                onCickMenuSummaryInfo();
+                break;
+
+            case R.id.menu_glossary:
+                onClickMenuGlossary();
+
+            case R.id.menu_food:
+                onClickMenuFood();
+                break;
+
+            case R.id.menu_sport:
+                onClickMenuSport();
+                break;
+
+            case R.id.menu_plan:
+                onClickMenuPlan();
+                break;
+
+            case R.id.menu_mom_image:
+                onClickMenuMomImage();
+                break;
+        }
+        return true;
+    }
+
+    private void onClickMenuMomImage() {
+        Toast.makeText(getApplicationContext(), "Đã click menu mom image", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onClickMenuPlan() {
+        Toast.makeText(getApplicationContext(), "Đã click menu plan", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onClickMenuSport() {
+        Toast.makeText(getApplicationContext(), "Đã click menu sport", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onClickMenuGlossary() {
+        Toast.makeText(getApplicationContext(), "Đã click menu glossary", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onClickMenuFood() {
+        Toast.makeText(getApplicationContext(), "Đã click menu food", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onCickMenuSummaryInfo() {
+        Intent intent = new Intent(MainActivity.this, ShowSummaryInfoList.class);
+        startActivity(intent);
+        // Toast.makeText(getApplicationContext(), "Đã click menu summary info", Toast.LENGTH_SHORT).show();
+    }
 }

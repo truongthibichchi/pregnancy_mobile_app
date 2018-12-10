@@ -17,7 +17,7 @@ public interface SummaryInfoService {
     );
 
     @GET("get-mom-info-by-week")
-    Observable<JsonObject> getMomByWeek(
+    Observable<JsonObject> getMomInfoByWeek(
             @Query("week") int weekId
     );
 
@@ -30,4 +30,7 @@ public interface SummaryInfoService {
     Observable<JsonObject> getAdviceByWeek(
             @Query("week") int weekId
     );
+
+    @GET("get-all-glossary")
+    Observable<JsonObject> getAllGlossary();
 }

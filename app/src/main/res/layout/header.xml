@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="170dp"
-    android:background="@drawable/mom_and_baby"
+    android:background="@drawable/img_navigation_header_background"
     android:orientation="vertical"
     android:padding="20dp"
     >
@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/avatar"/>
+        android:src="@drawable/ing_navigation_avatar"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/summary_info"
-        android:icon="@drawable/mom_icon"
-        android:title="@string/summary_info">
+        android:id="@+id/menu_summary_info"
+        android:title="@string/summary_info"
+        android:icon="@drawable/ic_navigation_menu_summary_info">
     </item>
 
     <item
-        android:id="@+id/glossary"
-        android:title="Tra cứu thuật ngữ">
+        android:id="@+id/menu_glossary"
+        android:title="Tra cứu thuật ngữ"
+        android:icon="@drawable/ic_navigation_menu_glossary">
     </item>
     <item
-        android:id="@+id/food"
-        android:title="@string/food">
-    </item>
-
-    <item
-        android:id="@+id/sport"
-        android:title="@string/sport">
+        android:id="@+id/menu_food"
+        android:title="@string/food"
+        android:icon="@drawable/ic_navigation_menu_food">
     </item>
 
     <item
-        android:id="@+id/plan"
-        android:title="@string/plan">
+        android:id="@+id/menu_sport"
+        android:title="@string/sport"
+        android:icon="@drawable/ic_navigation_menu_sport">
     </item>
 
     <item
-        android:id="@+id/mom_image"
-        android:title="@string/mom_image">
+        android:id="@+id/menu_plan"
+        android:title="@string/plan"
+        android:icon="@drawable/ic_navigation_memu_plan">
+    </item>
+
+    <item
+        android:id="@+id/menu_mom_image"
+        android:title="@string/mom_image"
+        android:icon="@drawable/ic_navigation_menu_mom_image">
     </item>
 
 </menu>
