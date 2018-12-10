@@ -22,7 +22,7 @@ import java.util.List;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class WeekDetails extends AppCompatActivity {
+public class WeekDetailsActivity extends AppCompatActivity {
     private int week_id;
     private Bundle mBundle;
 

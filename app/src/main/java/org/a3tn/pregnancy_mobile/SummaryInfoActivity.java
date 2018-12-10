@@ -2,13 +2,8 @@ package org.a3tn.pregnancy_mobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
@@ -27,7 +22,7 @@ import java.util.List;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class ShowSummaryInfoList extends AppCompatActivity {
+public class SummaryInfoActivity extends AppCompatActivity {
 
     private ListView lvSummaryInfo;
     private List<SummaryInfo> mSummaryInfoList;
@@ -45,7 +40,7 @@ public class ShowSummaryInfoList extends AppCompatActivity {
 
     private void setupEventHandler() {
         lvSummaryInfo.setOnItemClickListener((parent, view, position, id) -> {
-            Intent intent = new Intent(ShowSummaryInfoList.this, WeekDetails.class);
+            Intent intent = new Intent(SummaryInfoActivity.this, WeekDetailsActivity.class);
             int weekId = mSummaryInfoList.get(position).getId();
             intent.putExtra("id", weekId);
             startActivity(intent);

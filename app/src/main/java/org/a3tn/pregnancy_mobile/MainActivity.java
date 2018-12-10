@@ -8,25 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewSummaryInfoAdapter;
-import org.a3tn.pregnancy_mobile.Model.SummaryInfo;
-import org.a3tn.pregnancy_mobile.apis.ApiFactory;
-import org.a3tn.pregnancy_mobile.apis.Constants;
-import org.a3tn.pregnancy_mobile.apis.api_services.SummaryInfoService;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -100,27 +82,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void onClickMenuMomImage() {
-        Toast.makeText(getApplicationContext(), "Đã click menu mom image", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "Đã click menu mom image", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuPlan() {
-        Toast.makeText(getApplicationContext(), "Đã click menu plan", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "Đã click menu plan", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuSport() {
-        Toast.makeText(getApplicationContext(), "Đã click menu sport", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "Đã click menu sport", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuGlossary() {
-        Toast.makeText(getApplicationContext(), "Đã click menu glossary", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, GlossaryActivity.class);
+        startActivity(intent);
+       // Toast.makeText(getApplicationContext(), "Đã click menu glossary", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuFood() {
-        Toast.makeText(getApplicationContext(), "Đã click menu food", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(), "Đã click menu food", Toast.LENGTH_SHORT).show();
     }
 
     private void onCickMenuSummaryInfo() {
-        Intent intent = new Intent(MainActivity.this, ShowSummaryInfoList.class);
+        Intent intent = new Intent(MainActivity.this, SummaryInfoActivity.class);
         startActivity(intent);
         // Toast.makeText(getApplicationContext(), "Đã click menu summary info", Toast.LENGTH_SHORT).show();
     }
