@@ -15,7 +15,7 @@ import org.a3tn.pregnancy_mobile.apis.api_services.LogInService;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class LogIn extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     private Button btn_login_email;
     private TextView tv_register;
@@ -44,7 +44,7 @@ public class LogIn extends AppCompatActivity {
     }
 
     private void onSignUp() {
-        Intent intent = new Intent(LogIn.this, SignUp.class);
+        Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
 
@@ -61,7 +61,7 @@ public class LogIn extends AppCompatActivity {
                             int err = res.get("err").getAsInt();
                             if (err == 0) {
 //                                JsonObject jsonObject = res.get("dt").getAsJsonObject();
-                                Intent intent = new Intent(LogIn.this, MainActivity.class);
+                                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

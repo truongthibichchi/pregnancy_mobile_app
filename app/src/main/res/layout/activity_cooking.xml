@@ -5,8 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_detail_background"
-    tools:context=".WeekDetailsActivity">
+    android:background="@drawable/cooking_background"
+    tools:context=".CookingActivity">
 
     <ListView
         android:layout_width="match_parent"
@@ -15,11 +15,12 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="90dp"
-        android:id="@+id/lv_detail">
+        android:id="@+id/lv_cooking"
+        >
     </ListView>
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+        android:id="@+id/navigation_cooking"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:layout_marginStart="0dp"
@@ -28,6 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation_week_details" />
+        app:menu="@menu/navigation_cooking" />
 
 </android.support.constraint.ConstraintLayout>

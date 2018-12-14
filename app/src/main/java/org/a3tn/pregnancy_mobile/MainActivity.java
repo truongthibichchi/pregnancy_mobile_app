@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void onClickMenuFood() {
-       // Toast.makeText(getApplicationContext(), "Đã click menu food", Toast.LENGTH_SHORT).show();
+       Intent intent = new Intent(MainActivity.this, CookingActivity.class);
+       startActivity(intent);
     }
 
     private void onCickMenuSummaryInfo() {

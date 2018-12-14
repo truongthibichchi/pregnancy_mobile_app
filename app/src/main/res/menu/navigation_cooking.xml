@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_cooking_list"
+        android:icon="@drawable/ic_cooking_list"
+        android:title="@string/cooking_list" />
+
+    <item
+        android:id="@+id/navigation_cooking_schedule"
+        android:icon="@drawable/ic_cooking_schedule"
+        android:title="@string/cooking_schedule" />
+</menu>

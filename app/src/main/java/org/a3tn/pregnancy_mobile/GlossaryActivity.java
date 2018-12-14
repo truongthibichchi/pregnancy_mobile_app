@@ -1,7 +1,5 @@
 package org.a3tn.pregnancy_mobile;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +7,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
@@ -17,9 +14,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewGlossaryAdapter;
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewSummaryInfoAdapter;
 import org.a3tn.pregnancy_mobile.Model.Glossary;
-import org.a3tn.pregnancy_mobile.Model.SummaryInfo;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
 import org.a3tn.pregnancy_mobile.apis.api_services.SummaryInfoService;
@@ -98,19 +93,19 @@ public class GlossaryActivity extends AppCompatActivity {
 //            int idWord = mGlossaries.get(position).getId();
 //            intent.putExtra("id", idWord);
 //            startActivity(intent);
-            AlertDialog.Builder builder1 = new AlertDialog.Builder(GlossaryActivity.this);
-            builder1.setMessage(mGlossaries.get(position).getMeaning());
-            builder1.setCancelable(true);
+            AlertDialog.Builder builder = new AlertDialog.Builder(GlossaryActivity.this);
+            builder.setMessage(mGlossaries.get(position).getMeaning());
+            builder.setCancelable(true);
 
-            builder1.setNegativeButton(
+            builder.setNegativeButton(
                     "Cancel",
                (dialog, id)->
                         dialog.cancel()
             );
 
 
-            AlertDialog alert11 = builder1.create();
-            alert11.show();
+            AlertDialog alert = builder.create();
+            alert.show();
         });
     }
 }

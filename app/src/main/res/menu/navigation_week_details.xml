@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/navigation_baby"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baby"
         android:title="@string/title_baby_info" />
 
     <item
         android:id="@+id/navigation_mom"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_mom"
         android:title="@string/title_mom_info" />
 
     <item
         android:id="@+id/navigation_symptom"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_symptom"
         android:title="@string/title_symptom" />
     <item
         android:id="@+id/navigation_advice"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_advice"
         android:title="@string/title_advice" />
 
 

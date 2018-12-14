@@ -24,4 +24,6 @@
     <string name="title_mom_info">Tình trạng của mẹ</string>
     <string name="title_symptom">Triệu chứng</string>
     <string name="title_advice">Lời khuyên</string>
+    <string name="cooking_list">Danh sách món ăn</string>
+    <string name="cooking_schedule">Lên lịch ăn</string>
 </resources>

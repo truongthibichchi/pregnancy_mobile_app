@@ -16,7 +16,7 @@ import org.a3tn.pregnancy_mobile.apis.api_services.SignUpService;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
     private Button btnSignUp;
     private EditText etEmail, etPassword, etFullName, etConceivedDate;
     @Override
@@ -32,7 +32,7 @@ public class SignUp extends AppCompatActivity {
             String fullname = etFullName.getText().toString();
             String conceivedDate = etConceivedDate.getText().toString();
             onSignUp(email, password, fullname, conceivedDate);
-            Intent intent = new Intent(SignUp.this, MainActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
             startActivity(intent);
 
         });
@@ -52,7 +52,7 @@ public class SignUp extends AppCompatActivity {
                             int err = res.get("err").getAsInt();
                             if (err == 0) {
                                 JsonObject jsonObject = res.get("dt").getAsJsonObject();
-                                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
