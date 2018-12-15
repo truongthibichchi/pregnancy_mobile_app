@@ -11,29 +11,13 @@ import com.bumptech.glide.Glide;
 
 import org.a3tn.pregnancy_mobile.Model.SummaryInfo;
 import org.a3tn.pregnancy_mobile.R;
+import org.a3tn.pregnancy_mobile.apis.Constants;
 
 import java.util.List;
 
 public class ListViewSummaryInfoAdapter extends BaseAdapter {
     private Context mContext;
     private List<SummaryInfo> mSummaryInfoList;
-    private int[] images = {
-            R.drawable.week_1, R.drawable.week_2, R.drawable.week_3,
-            R.drawable.week_4, R.drawable.week_5, R.drawable.week_6,
-            R.drawable.week_7, R.drawable.week_8, R.drawable.week_9,
-            R.drawable.week_10, R.drawable.week_11, R.drawable.week_12,
-            R.drawable.week_13, R.drawable.week_14, R.drawable.week_15,
-            R.drawable.week_16, R.drawable.week_17, R.drawable.week_18,
-            R.drawable.week_19, R.drawable.week_20, R.drawable.week_21,
-            R.drawable.week_22, R.drawable.week_23, R.drawable.week_24,
-            R.drawable.week_25, R.drawable.week_26, R.drawable.week_27,
-            R.drawable.week_28, R.drawable.week_29, R.drawable.week_30,
-            R.drawable.week_31, R.drawable.week_32, R.drawable.week_33,
-            R.drawable.week_34, R.drawable.week_35, R.drawable.week_36,
-            R.drawable.week_37, R.drawable.week_38, R.drawable.week_39,
-            R.drawable.week_40, R.drawable.week_41, R.drawable.week_42
-    };
-
 
     public ListViewSummaryInfoAdapter(Context mContext, List<SummaryInfo> mSummaryInfoList) {
         this.mContext = mContext;
@@ -65,15 +49,16 @@ public class ListViewSummaryInfoAdapter extends BaseAdapter {
         } else {
             itemView = recycled;
         }
-        TextView textView = itemView.findViewById(R.id.tv_week);
-        ImageView imageView = itemView.findViewById(R.id.img_image);
+        TextView textView = itemView.findViewById(R.id.tv_item_summary_info_week);
+        ImageView imageView = itemView.findViewById(R.id.img_item_summary_info);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         textView.setText(mSummaryInfoList.get(position).getWeeks());
+        String pictureUrl = Constants.STATIC_URL+"weeks/"+mSummaryInfoList.get(position).getPicture();
 //        imageView.setImageResource(images[position]);
         Glide
                 .with(mContext)
-                .load(images[position])
+                .load(pictureUrl)
                 .into(imageView);
 
         itemView.setTag(mSummaryInfoList.get(position).getId());

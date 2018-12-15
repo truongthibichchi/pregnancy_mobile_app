@@ -65,7 +65,7 @@ public class LogInActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                            Toast.makeText(this, res.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(this, res.get("msg").getAsString(), Toast.LENGTH_SHORT).show();
 
                         },
                         err -> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()

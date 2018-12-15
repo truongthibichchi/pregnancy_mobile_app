@@ -6,11 +6,25 @@ public class CookingDetail {
     private int id;
     private String foodName;
     private String description;
+    private String picture;
     private List<CookingIngredient> ingredients;
     private List<CookingStep> steps;
     private List<CookingTip> tips;
 
     public CookingDetail() {
+    }
+
+    public CookingDetail(int id, String foodName, String description) {
+        this.id = id;
+        this.foodName = foodName;
+        this.description = description;
+    }
+
+    public CookingDetail(int id, String foodName, String description, String picture) {
+        this.id = id;
+        this.foodName = foodName;
+        this.description = description;
+        this.picture = picture;
     }
 
     public CookingDetail(int id, String foodName, String description, List<CookingIngredient> ingredients, List<CookingStep> steps, List<CookingTip> tips) {
@@ -44,6 +58,14 @@ public class CookingDetail {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public List<CookingIngredient> getIngredients() {

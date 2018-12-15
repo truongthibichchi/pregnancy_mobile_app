@@ -1,5 +1,6 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -15,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private NavigationView mNavigation;
-
 
 
     @Override
@@ -34,13 +34,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mNavigation.setNavigationItemSelectedListener(this);
 
 
-
     }
+
     private void FindViewById() {
         mDrawerLayout = findViewById(R.id.drawer);
 
     }
-
 
 
     @Override
@@ -54,13 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.menu_summary_info:
                 onCickMenuSummaryInfo();
                 break;
 
             case R.id.menu_glossary:
                 onClickMenuGlossary();
+                break;
 
             case R.id.menu_food:
                 onClickMenuFood();
@@ -82,31 +82,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void onClickMenuMomImage() {
-        //Toast.makeText(getApplicationContext(), "Đã click menu mom image", Toast.LENGTH_SHORT).show();
+
     }
 
     private void onClickMenuPlan() {
-        //Toast.makeText(getApplicationContext(), "Đã click menu plan", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuSport() {
-        //Toast.makeText(getApplicationContext(), "Đã click menu sport", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, SportActivity.class);
+        startActivity(intent);
     }
 
     private void onClickMenuGlossary() {
         Intent intent = new Intent(MainActivity.this, GlossaryActivity.class);
         startActivity(intent);
-       // Toast.makeText(getApplicationContext(), "Đã click menu glossary", Toast.LENGTH_SHORT).show();
     }
 
     private void onClickMenuFood() {
-       Intent intent = new Intent(MainActivity.this, CookingActivity.class);
-       startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, CookingActivity.class);
+        startActivity(intent);
     }
 
     private void onCickMenuSummaryInfo() {
         Intent intent = new Intent(MainActivity.this, SummaryInfoActivity.class);
         startActivity(intent);
-        // Toast.makeText(getApplicationContext(), "Đã click menu summary info", Toast.LENGTH_SHORT).show();
     }
+
 }

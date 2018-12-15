@@ -63,8 +63,8 @@ public class SummaryInfoActivity extends AppCompatActivity {
                                 String weeks = jsonObject.get("weeks").getAsString();
                                 String babyInfo = jsonObject.get("baby_info").getAsString();
                                 String momInfo = jsonObject.get("mom_info").getAsString();
-
-                                mSummaryInfoList.add(new SummaryInfo(id, weeks, babyInfo, momInfo));
+                                String picture = jsonObject.get("picture").getAsString();
+                                mSummaryInfoList.add(new SummaryInfo(id, weeks, babyInfo, momInfo, picture));
 //
                             }
                             mAdapter = new ListViewSummaryInfoAdapter(getApplicationContext(), mSummaryInfoList);

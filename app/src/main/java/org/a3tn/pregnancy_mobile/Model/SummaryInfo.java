@@ -1,10 +1,11 @@
 package org.a3tn.pregnancy_mobile.Model;
 
 public class SummaryInfo {
-    int id;
-    String weeks;
-    String babyInfo;
-    String momInfo;
+    private int id;
+    private String weeks;
+    private String babyInfo;
+    private String momInfo;
+    private String picture;
 
     public SummaryInfo() {
     }
@@ -14,6 +15,14 @@ public class SummaryInfo {
         this.weeks = weeks;
         this.babyInfo = babyInfo;
         this.momInfo = momInfo;
+    }
+
+    public SummaryInfo(int id, String weeks, String babyInfo, String momInfo, String picture) {
+        this.id = id;
+        this.weeks = weeks;
+        this.babyInfo = babyInfo;
+        this.momInfo = momInfo;
+        this.picture = picture;
     }
 
     public int getId() {
@@ -46,5 +55,13 @@ public class SummaryInfo {
 
     public void setMomInfo(String momInfo) {
         this.momInfo = momInfo;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
