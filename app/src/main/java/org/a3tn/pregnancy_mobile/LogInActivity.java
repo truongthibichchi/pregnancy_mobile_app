@@ -1,8 +1,10 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +17,7 @@ import org.a3tn.pregnancy_mobile.apis.api_services.LogInService;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class LogInActivity extends AppCompatActivity {
+public class LogInActivity extends Activity {
 
     private Button btn_login_email;
     private TextView tv_register;
@@ -24,6 +26,7 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_log_in);
 
         FindViewById();
@@ -73,9 +76,9 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void FindViewById() {
-        btn_login_email = findViewById(R.id.btn_sign_up);
-        tv_register = findViewById(R.id.tv_register);
-        et_email = findViewById(R.id.et_email);
-        et_password = findViewById(R.id.et_password);
+        btn_login_email = findViewById(R.id.btn_log_in);
+        tv_register = findViewById(R.id.btn_register);
+        et_email = findViewById(R.id.et_login_email);
+        et_password = findViewById(R.id.et_login_password);
     }
 }

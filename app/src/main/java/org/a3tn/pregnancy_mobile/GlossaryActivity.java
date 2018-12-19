@@ -1,10 +1,12 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.app.Activity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,7 +27,7 @@ import java.util.List;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class GlossaryActivity extends AppCompatActivity {
+public class GlossaryActivity extends Activity {
     private EditText etSearch;
     private ListView lvGlossary;
     private List<Glossary> mGlossaries;
@@ -34,6 +36,7 @@ public class GlossaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_glossary);
 
         etSearch = findViewById(R.id.et_glossary);

@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/summary_info_background"
-    tools:context=".SummaryInfoActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
 
-    <ListView
+    android:background="@mipmap/img_summary_background"
+    tools:context=".SummaryInfoActivity">
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_title_42_weeks"/>
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listview_summary_info"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:divider="#d1d1d1"
+        android:layout_margin="10dp"
+        android:columnCount="2"
         >
-    </ListView>
 
-</android.support.constraint.ConstraintLayout>
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchMode="columnWidth"
+            android:id="@+id/gv_summary_info"
+            android:numColumns="auto_fit">
+
+        </GridView>
+    </GridLayout>
+
+</LinearLayout>

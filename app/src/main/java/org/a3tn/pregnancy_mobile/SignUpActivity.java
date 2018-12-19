@@ -1,8 +1,11 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,12 +19,13 @@ import org.a3tn.pregnancy_mobile.apis.api_services.SignUpService;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends Activity {
     private Button btnSignUp;
     private EditText etEmail, etPassword, etFullName, etConceivedDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_sign_up);
 
         FindViewById();
@@ -64,10 +68,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void FindViewById() {
-        etEmail = findViewById(R.id.et_email);
-        etPassword = findViewById(R.id.et_password);
-        etFullName = findViewById(R.id.et_fullname);
-        etConceivedDate = findViewById(R.id.et_Date);
+        etEmail = findViewById(R.id.et_sign_up_email);
+        etPassword = findViewById(R.id.et_sign_up_password);
+        etFullName = findViewById(R.id.et_sign_up_fullname);
+        etConceivedDate = findViewById(R.id.et_sign_up_Date);
         btnSignUp=findViewById(R.id.btn_sign_up);
     }
 }

@@ -1,10 +1,12 @@
 package org.a3tn.pregnancy_mobile.CustomAdapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -60,6 +62,14 @@ public class ListViewDetailInfoAdapter extends BaseAdapter {
 
         itemView.setTag(details.get(position));
 
+        LinearLayout llparent = itemView.findViewById(R.id.item_detail_parent);
+        if(position%2 !=0){
+            llparent.setBackgroundResource(R.color.blue);
+        }
+        else{
+            llparent.setBackgroundResource(R.color.home_color);
+        }
         return itemView;
+
     }
 }

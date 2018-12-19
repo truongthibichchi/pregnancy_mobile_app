@@ -1,9 +1,10 @@
 package org.a3tn.pregnancy_mobile;
 
+import android.app.Activity;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.view.Window;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
@@ -22,7 +23,7 @@ import java.util.List;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class WeekDetailsActivity extends AppCompatActivity {
+public class WeekDetailsActivity extends Activity {
     private int week_id;
     private Bundle mBundle;
 
@@ -32,19 +33,20 @@ public class WeekDetailsActivity extends AppCompatActivity {
     private ArrayList<String> advices =  new ArrayList<>();
     private List<Glossary> glossaries = new ArrayList<>();
 
-    private ListView lvDetail;
+    private GridView gvDetail;
 
     private BottomNavigationView mBottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_week_details);
         mBundle = getIntent().getExtras();
         week_id = (int) mBundle.get("id");
         getGlossaryData();
 
-        lvDetail = findViewById(R.id.lv_detail);
+        gvDetail = findViewById(R.id.gv_detail);
         mBottomNavigation = findViewById(R.id.navigation);
 
         mBottomNavigation.setOnNavigationItemSelectedListener(menuItem -> {
@@ -88,7 +90,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
                             }
                             glossaries=data;
 //                            ListViewDetailInfoAdapter mMomInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
-////                            lvDetail.setAdapter(mMomInfoAdapter);
+////                            gvDetail.setAdapter(mMomInfoAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -98,7 +100,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
     private void showBabyInfo() {
         if(babyInfos.size()>0){
             ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
-            lvDetail.setAdapter(mBabyInfoAdapter);
+            gvDetail.setAdapter(mBabyInfoAdapter);
         }
         else{
             getBabyInfoData(week_id);
@@ -125,7 +127,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
                             }
                             babyInfos=data;
                             ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
-                            lvDetail.setAdapter(mBabyInfoAdapter);
+                            gvDetail.setAdapter(mBabyInfoAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -135,7 +137,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
     private void showMomInfo() {
         if(momInfos.size()>0){
             ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
-            lvDetail.setAdapter(mBabyInfoAdapter);
+            gvDetail.setAdapter(mBabyInfoAdapter);
         }
         else{
             getMomInfoData(week_id);
@@ -162,8 +164,8 @@ public class WeekDetailsActivity extends AppCompatActivity {
                             }
                             momInfos=data;
                             ListViewDetailInfoAdapter mMomInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
-                            lvDetail.setAdapter(mMomInfoAdapter);
-                            findWord();
+                            gvDetail.setAdapter(mMomInfoAdapter);
+                            //findWord();
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -199,7 +201,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
     private void showSymptomInfo() {
         if(symptoms.size()>0){
             ListViewDetailInfoAdapter mSymptomAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
-            lvDetail.setAdapter(mSymptomAdapter);
+            gvDetail.setAdapter(mSymptomAdapter);
         }
         else{
             getSymptomData(week_id);
@@ -223,7 +225,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
                             }
                             symptoms=data;
                             ListViewDetailInfoAdapter mSymptomAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
-                            lvDetail.setAdapter(mSymptomAdapter);
+                            gvDetail.setAdapter(mSymptomAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -233,7 +235,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
     private void showAdvices() {
         if(advices.size()>0){
             ListViewDetailInfoAdapter mAdviceAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
-            lvDetail.setAdapter(mAdviceAdapter);
+            gvDetail.setAdapter(mAdviceAdapter);
         }
         else{
             getAdviceData(week_id);
@@ -257,7 +259,7 @@ public class WeekDetailsActivity extends AppCompatActivity {
                             }
                             advices=data;
                             ListViewDetailInfoAdapter mAdviceAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
-                            lvDetail.setAdapter(mAdviceAdapter);
+                            gvDetail.setAdapter(mAdviceAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 

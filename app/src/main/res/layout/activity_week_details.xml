@@ -5,23 +5,34 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_detail_background"
     tools:context=".WeekDetailsActivity">
-
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="90dp"
-        android:id="@+id/lv_detail">
-    </ListView>
+        android:layout_height="wrap_content"
+        android:background="@mipmap/background"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_title_42_weeks"/>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:id="@+id/gv_detail">
+        </GridView>
+    </LinearLayout>
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="70dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"

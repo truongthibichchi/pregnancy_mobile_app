@@ -10,7 +10,7 @@
     <string name="input_full_name">Nhập Họ Tên</string>
     <string name="input_email_register">Nhập Email Đăng Nhập</string>
     <string name="input_pass">Nhập Mật Khẩu</string>
-    <string name="input_date">Nhập Ngày Đậu Thai (yyyy-mm-dd)</string>
+    <string name="input_date">Ngày Đậu Thai (yyyy-mm-dd)</string>
     <string name="note_register">Vui lòng đăng nhập với email mà bạn sử dụng!</string>
     <string name="backtologin">Quay Lại</string>
     <string name="register_account">Đăng Ký</string>
