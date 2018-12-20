@@ -24,7 +24,8 @@
         <activity android:name=".WeekDetailsActivity" />
         <activity android:name=".GlossaryActivity" />
         <activity android:name=".CookingActivity" />
-        <activity android:name=".SportActivity"></activity>
+        <activity android:name=".SportActivity" />
+        <activity android:name=".CookingDetailActivity"></activity>
     </application>
 
 </manifest>

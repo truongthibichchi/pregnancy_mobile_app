@@ -3,9 +3,7 @@ package org.a3tn.pregnancy_mobile;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -13,7 +11,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewSummaryInfoAdapter;
+import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewSummaryInfoAdapter;
 import org.a3tn.pregnancy_mobile.Model.SummaryInfo;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
@@ -29,7 +27,7 @@ public class SummaryInfoActivity extends Activity {
 
     private GridView glSummaryInfo;
     private List<SummaryInfo> mSummaryInfoList;
-    private ListViewSummaryInfoAdapter mAdapter;
+    private GridViewSummaryInfoAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +69,7 @@ public class SummaryInfoActivity extends Activity {
                                 mSummaryInfoList.add(new SummaryInfo(id, weeks, picture));
 //
                             }
-                            mAdapter = new ListViewSummaryInfoAdapter(getApplicationContext(), mSummaryInfoList);
+                            mAdapter = new GridViewSummaryInfoAdapter(getApplicationContext(), mSummaryInfoList);
                             glSummaryInfo.setAdapter(mAdapter);
                         },
                         err -> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()

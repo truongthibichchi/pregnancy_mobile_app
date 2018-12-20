@@ -11,7 +11,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewDetailInfoAdapter;
+import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewDetailInfoAdapter;
 import org.a3tn.pregnancy_mobile.Model.Glossary;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
@@ -89,8 +89,6 @@ public class WeekDetailsActivity extends Activity {
 
                             }
                             glossaries=data;
-//                            ListViewDetailInfoAdapter mMomInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
-////                            gvDetail.setAdapter(mMomInfoAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -99,7 +97,7 @@ public class WeekDetailsActivity extends Activity {
 
     private void showBabyInfo() {
         if(babyInfos.size()>0){
-            ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
+            GridViewDetailInfoAdapter mBabyInfoAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
             gvDetail.setAdapter(mBabyInfoAdapter);
         }
         else{
@@ -126,7 +124,7 @@ public class WeekDetailsActivity extends Activity {
 
                             }
                             babyInfos=data;
-                            ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
+                            GridViewDetailInfoAdapter mBabyInfoAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), babyInfos, R.drawable.img_detail_baby_info);
                             gvDetail.setAdapter(mBabyInfoAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
@@ -136,7 +134,7 @@ public class WeekDetailsActivity extends Activity {
 
     private void showMomInfo() {
         if(momInfos.size()>0){
-            ListViewDetailInfoAdapter mBabyInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
+            GridViewDetailInfoAdapter mBabyInfoAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
             gvDetail.setAdapter(mBabyInfoAdapter);
         }
         else{
@@ -163,7 +161,7 @@ public class WeekDetailsActivity extends Activity {
 
                             }
                             momInfos=data;
-                            ListViewDetailInfoAdapter mMomInfoAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
+                            GridViewDetailInfoAdapter mMomInfoAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), momInfos, R.drawable.img_detail_mom_info);
                             gvDetail.setAdapter(mMomInfoAdapter);
                             //findWord();
                         },
@@ -200,7 +198,7 @@ public class WeekDetailsActivity extends Activity {
 
     private void showSymptomInfo() {
         if(symptoms.size()>0){
-            ListViewDetailInfoAdapter mSymptomAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
+            GridViewDetailInfoAdapter mSymptomAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
             gvDetail.setAdapter(mSymptomAdapter);
         }
         else{
@@ -224,7 +222,7 @@ public class WeekDetailsActivity extends Activity {
 
                             }
                             symptoms=data;
-                            ListViewDetailInfoAdapter mSymptomAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
+                            GridViewDetailInfoAdapter mSymptomAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), symptoms, R.drawable.img_detail_symptom_info);
                             gvDetail.setAdapter(mSymptomAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
@@ -234,7 +232,7 @@ public class WeekDetailsActivity extends Activity {
 
     private void showAdvices() {
         if(advices.size()>0){
-            ListViewDetailInfoAdapter mAdviceAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
+            GridViewDetailInfoAdapter mAdviceAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
             gvDetail.setAdapter(mAdviceAdapter);
         }
         else{
@@ -258,7 +256,7 @@ public class WeekDetailsActivity extends Activity {
                                 data.add(detail);
                             }
                             advices=data;
-                            ListViewDetailInfoAdapter mAdviceAdapter = new ListViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
+                            GridViewDetailInfoAdapter mAdviceAdapter = new GridViewDetailInfoAdapter(getApplicationContext(), advices, R.drawable.img_detail_advice);
                             gvDetail.setAdapter(mAdviceAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()

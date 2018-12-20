@@ -9,58 +9,59 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.a3tn.pregnancy_mobile.Model.CookingDetail;
+import org.a3tn.pregnancy_mobile.Model.SummaryInfo;
 import org.a3tn.pregnancy_mobile.R;
 import org.a3tn.pregnancy_mobile.apis.Constants;
 
 import java.util.List;
 
-public class ListViewCookingAdapter extends BaseAdapter {
-    private Context context;
-    private List<CookingDetail> cookingDetails;
+public class GridViewSummaryInfoAdapter extends BaseAdapter {
+    private Context mContext;
+    private List<SummaryInfo> mSummaryInfoList;
 
-    public ListViewCookingAdapter(Context context, List<CookingDetail> cookingDetails) {
-        this.context = context;
-        this.cookingDetails = cookingDetails;
+    public GridViewSummaryInfoAdapter(Context mContext, List<SummaryInfo> mSummaryInfoList) {
+        this.mContext = mContext;
+        this.mSummaryInfoList = mSummaryInfoList;
     }
 
-
     @Override
+
     public int getCount() {
-        return cookingDetails.size();
+        return mSummaryInfoList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return cookingDetails.get(position);
+
+        return mSummaryInfoList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return cookingDetails.get(position).getId();
+        return position;
     }
 
     @Override
     public View getView(int position, View recycled, ViewGroup parent) {
         View itemView;
         if (recycled == null) {
-            itemView = View.inflate(context, R.layout.custom_item_cooking, null);
+            itemView = View.inflate(mContext, R.layout.custom_item_summary_info, null);
         } else {
             itemView = recycled;
         }
-        TextView textView = itemView.findViewById(R.id.tv_item_cooking_food_name);
-        ImageView imageView = itemView.findViewById(R.id.img_item_cooking_picture);
+        TextView textView = itemView.findViewById(R.id.tv_item_summary_info_week);
+        ImageView imageView = itemView.findViewById(R.id.img_item_summary_info);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        textView.setText(cookingDetails.get(position).getFoodName());
+        textView.setText(mSummaryInfoList.get(position).getWeeks());
+        String pictureUrl = Constants.STATIC_URL+"weeks/"+mSummaryInfoList.get(position).getPicture();
 //        imageView.setImageResource(images[position]);
-        String pictureUrl = Constants.STATIC_URL+"foods/"+cookingDetails.get(position).getPicture();
         Glide
-                .with(context)
+                .with(mContext)
                 .load(pictureUrl)
                 .into(imageView);
 
-        itemView.setTag(cookingDetails.get(position));
+        itemView.setTag(mSummaryInfoList.get(position).getId());
 
         return itemView;
     }

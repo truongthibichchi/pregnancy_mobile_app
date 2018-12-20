@@ -1,29 +1,27 @@
 package org.a3tn.pregnancy_mobile;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewCookingAdapter;
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewDetailInfoAdapter;
+import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewCookingAdapter;
 import org.a3tn.pregnancy_mobile.Model.CookingDetail;
 import org.a3tn.pregnancy_mobile.Model.CookingIngredient;
 import org.a3tn.pregnancy_mobile.Model.CookingStep;
 import org.a3tn.pregnancy_mobile.Model.CookingTip;
-import org.a3tn.pregnancy_mobile.Model.Glossary;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
 import org.a3tn.pregnancy_mobile.apis.api_services.CookingService;
-import org.a3tn.pregnancy_mobile.apis.api_services.SummaryInfoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +36,7 @@ public class CookingActivity extends Activity {
     private List<CookingStep> mCookingSteps;
     private List<CookingTip> mCookingTips;
 
-    private ListView lvCooking;
+    private GridView gvCooking;
     private BottomNavigationView mNavigationView;
 
     @Override
@@ -47,7 +45,7 @@ public class CookingActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_cooking);
 
-        lvCooking= findViewById(R.id.lv_cooking);
+        gvCooking = findViewById(R.id.gv_cooking);
         mNavigationView = findViewById(R.id.navigation_cooking);
 
         mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
@@ -63,6 +61,13 @@ public class CookingActivity extends Activity {
         });
 
         showCookingList();
+
+        gvCooking.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(CookingActivity.this, CookingDetailActivity.class);
+            int cooking_id = mCookingDetails.get(position).getId();
+            intent.putExtra("cookingId", cooking_id);
+            startActivity(intent);
+        });
     }
 
     private void showCookingSchedule() {
@@ -83,14 +88,14 @@ public class CookingActivity extends Activity {
 
                                 int id = jsonObject.get("id").getAsInt();
                                 String foodName = jsonObject.get("food_name").getAsString();
-                                String description = jsonObject.get("descriptions").getAsString();
+                                String detail = jsonObject.get("detail").getAsString();
                                 String picture = jsonObject.get("picture").getAsString();
-                                data.add(new CookingDetail(id,foodName,description,picture));
+                                data.add(new CookingDetail(id,foodName,detail,picture));
 
                             }
                             mCookingDetails=data;
-                            ListViewCookingAdapter mCookingAdapter = new ListViewCookingAdapter(getApplicationContext(), mCookingDetails);
-                            lvCooking.setAdapter(mCookingAdapter);
+                            GridViewCookingAdapter mCookingAdapter = new GridViewCookingAdapter(getApplicationContext(), mCookingDetails);
+                            gvCooking.setAdapter(mCookingAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 

@@ -15,12 +15,12 @@ import org.a3tn.pregnancy_mobile.R;
 
 import java.util.ArrayList;
 
-public class ListViewDetailInfoAdapter extends BaseAdapter {
+public class GridViewDetailInfoAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<String> details;
     private int icon;
 
-    public ListViewDetailInfoAdapter(Context mContext, ArrayList<String> details, int icon) {
+    public GridViewDetailInfoAdapter(Context mContext, ArrayList<String> details, int icon) {
         this.mContext = mContext;
         this.details = details;
         this.icon = icon;

@@ -5,24 +5,32 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@mipmap/background"
     tools:context=".CookingActivity">
 
-    <ListView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="90dp"
-        android:id="@+id/lv_cooking"
+        android:layout_margin="10dp"
+        android:columnCount="2"
         >
-    </ListView>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            android:stretchMode="columnWidth"
+            android:id="@+id/gv_cooking">
+
+        </GridView>
+    </GridLayout>
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_cooking"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="70dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"

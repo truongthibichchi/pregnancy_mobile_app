@@ -5,7 +5,7 @@ import java.util.List;
 public class CookingDetail {
     private int id;
     private String foodName;
-    private String description;
+    private String detail;
     private String picture;
     private List<CookingIngredient> ingredients;
     private List<CookingStep> steps;
@@ -14,23 +14,23 @@ public class CookingDetail {
     public CookingDetail() {
     }
 
-    public CookingDetail(int id, String foodName, String description) {
+    public CookingDetail(int id, String foodName, String detail) {
         this.id = id;
         this.foodName = foodName;
-        this.description = description;
+        this.detail = detail;
     }
 
-    public CookingDetail(int id, String foodName, String description, String picture) {
+    public CookingDetail(int id, String foodName, String detail, String picture) {
         this.id = id;
         this.foodName = foodName;
-        this.description = description;
+        this.detail = detail;
         this.picture = picture;
     }
 
-    public CookingDetail(int id, String foodName, String description, List<CookingIngredient> ingredients, List<CookingStep> steps, List<CookingTip> tips) {
+    public CookingDetail(int id, String foodName, String detail, List<CookingIngredient> ingredients, List<CookingStep> steps, List<CookingTip> tips) {
         this.id = id;
         this.foodName = foodName;
-        this.description = description;
+        this.detail = detail;
         this.ingredients = ingredients;
         this.steps = steps;
         this.tips = tips;
@@ -52,12 +52,12 @@ public class CookingDetail {
         this.foodName = foodName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public String getPicture() {
