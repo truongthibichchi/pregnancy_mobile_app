@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -15,7 +13,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewCookingAdapter;
-import org.a3tn.pregnancy_mobile.Model.CookingDetail;
+import org.a3tn.pregnancy_mobile.Model.Cooking;
 import org.a3tn.pregnancy_mobile.Model.CookingIngredient;
 import org.a3tn.pregnancy_mobile.Model.CookingStep;
 import org.a3tn.pregnancy_mobile.Model.CookingTip;
@@ -31,7 +29,7 @@ import rx.schedulers.Schedulers;
 
 public class CookingActivity extends Activity {
 
-    private List<CookingDetail> mCookingDetails;
+    private List<Cooking> mCookings;
     private List<CookingIngredient> mCookingIngredients;
     private List<CookingStep> mCookingSteps;
     private List<CookingTip> mCookingTips;
@@ -64,8 +62,14 @@ public class CookingActivity extends Activity {
 
         gvCooking.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(CookingActivity.this, CookingDetailActivity.class);
-            int cooking_id = mCookingDetails.get(position).getId();
-            intent.putExtra("cookingId", cooking_id);
+            int cooking_id = mCookings.get(position).getId();
+            String foodName = mCookings.get(position).getFoodName();
+            String detail = mCookings.get(position).getDetail();
+            String picture = mCookings.get(position).getPicture();
+            intent.putExtra("id", cooking_id);
+            intent.putExtra("foodName", foodName);
+            intent.putExtra("detail", detail);
+            intent.putExtra("picture", picture);
             startActivity(intent);
         });
     }
@@ -75,7 +79,7 @@ public class CookingActivity extends Activity {
     }
 
     private void showCookingList() {
-        List<CookingDetail> data = new ArrayList<>();
+        List<Cooking> data = new ArrayList<>();
         ApiFactory.createRetrofitService(CookingService.class, Constants.HOST_SERVER)
                 .getAllCookingInfo()
                 .subscribeOn(Schedulers.newThread())
@@ -90,11 +94,11 @@ public class CookingActivity extends Activity {
                                 String foodName = jsonObject.get("food_name").getAsString();
                                 String detail = jsonObject.get("detail").getAsString();
                                 String picture = jsonObject.get("picture").getAsString();
-                                data.add(new CookingDetail(id,foodName,detail,picture));
+                                data.add(new Cooking(id,foodName,detail,picture));
 
                             }
-                            mCookingDetails=data;
-                            GridViewCookingAdapter mCookingAdapter = new GridViewCookingAdapter(getApplicationContext(), mCookingDetails);
+                            mCookings =data;
+                            GridViewCookingAdapter mCookingAdapter = new GridViewCookingAdapter(getApplicationContext(), mCookings);
                             gvCooking.setAdapter(mCookingAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()

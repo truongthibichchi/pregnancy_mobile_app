@@ -2,20 +2,19 @@ package org.a3tn.pregnancy_mobile;
 
 import android.app.Activity;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Window;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewGlossaryAdapter;
+import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewGlossaryAdapter;
 import org.a3tn.pregnancy_mobile.Model.Glossary;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
@@ -29,9 +28,9 @@ import rx.schedulers.Schedulers;
 
 public class GlossaryActivity extends Activity {
     private EditText etSearch;
-    private ListView lvGlossary;
+    private GridView gvGlossary;
     private List<Glossary> mGlossaries;
-    private ListViewGlossaryAdapter mAdapter;
+    private GridViewGlossaryAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,7 @@ public class GlossaryActivity extends Activity {
         setContentView(R.layout.activity_glossary);
 
         etSearch = findViewById(R.id.et_glossary);
-        lvGlossary = findViewById(R.id.lv_glossary);
+        gvGlossary = findViewById(R.id.gv_glossary);
         getGlossaryData();
 
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -51,7 +50,7 @@ public class GlossaryActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Toast.makeText(getApplicationContext(), etSearch.getText(), Toast.LENGTH_SHORT).show();
+                findWord();
             }
 
             @Override
@@ -59,9 +58,33 @@ public class GlossaryActivity extends Activity {
 
             }
         });
-        setupEventHandler();
+
+
 
     }
+
+
+    private void findWord() {
+        String keyWord = etSearch.getText().toString();
+        if(keyWord.isEmpty()){
+            mAdapter = new GridViewGlossaryAdapter(getApplicationContext(), mGlossaries);
+            gvGlossary.setAdapter(mAdapter);
+            setupEventHandler(mGlossaries);
+            return;
+        }
+        List<Glossary> list = new ArrayList<>();
+        for (Glossary glossary : mGlossaries) {
+            if (keyWord.toLowerCase().contains(glossary.getWord().toLowerCase())) {
+                list.add(glossary);
+                Toast.makeText(this, glossary.getWord(), Toast.LENGTH_SHORT).show();
+            }
+
+        }
+        mAdapter = new GridViewGlossaryAdapter(getApplicationContext(), list);
+        gvGlossary.setAdapter(mAdapter);
+        setupEventHandler(list);
+    }
+
 
     private void getGlossaryData() {
         List<Glossary> data = new ArrayList<>();
@@ -70,7 +93,7 @@ public class GlossaryActivity extends Activity {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        res->{
+                        res -> {
                             JsonArray summaryInfoList = res.get("dt").getAsJsonArray();
                             for (JsonElement element : summaryInfoList) {
                                 JsonObject jsonObject = element.getAsJsonObject();
@@ -81,29 +104,28 @@ public class GlossaryActivity extends Activity {
                                 data.add(new Glossary(id, word, meaning));
 
                             }
-                            mGlossaries=data;
-                            mAdapter = new ListViewGlossaryAdapter(getApplicationContext(), mGlossaries);
-                            lvGlossary.setAdapter(mAdapter);
+                            mGlossaries = data;
+                            mAdapter = new GridViewGlossaryAdapter(getApplicationContext(), mGlossaries);
+                            gvGlossary.setAdapter(mAdapter);
+                            setupEventHandler(mGlossaries);
                         },
-                        err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
+                        err -> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
                 );
     }
 
-    private void setupEventHandler() {
-        lvGlossary.setOnItemClickListener((parent, view, position, idItem) -> {
-//            Intent intent = new Intent(GlossaryActivity.this, WeekDetailsActivity.class);
-//            int idWord = mGlossaries.get(position).getId();
-//            intent.putExtra("id", idWord);
-//            startActivity(intent);
+    private void setupEventHandler(List<Glossary> list) {
+        if(list.size()<=0){
+            return;
+        }
+        gvGlossary.setOnItemClickListener((parent, view, position, idItem) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(GlossaryActivity.this);
-            builder.setMessage(mGlossaries.get(position).getMeaning());
+            builder.setMessage(list.get(position).getMeaning());
             builder.setCancelable(true);
-
             builder.setNegativeButton(
                     "Cancel",
-               (dialog, id)->
-                        dialog.cancel()
+                    (dialog, id) ->
+                            dialog.cancel()
             );
 
 

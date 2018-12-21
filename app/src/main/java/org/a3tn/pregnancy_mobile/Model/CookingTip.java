@@ -3,12 +3,12 @@ package org.a3tn.pregnancy_mobile.Model;
 public class CookingTip {
     private int id;
     private int cookingId;
-    private int tip;
+    private String tip;
 
     public CookingTip() {
     }
 
-    public CookingTip(int id, int cookingId, int tip) {
+    public CookingTip(int id, int cookingId, String tip) {
         this.id = id;
         this.cookingId = cookingId;
         this.tip = tip;
@@ -30,11 +30,11 @@ public class CookingTip {
         this.cookingId = cookingId;
     }
 
-    public int getTip() {
+    public String getTip() {
         return tip;
     }
 
-    public void setTip(int tip) {
+    public void setTip(String tip) {
         this.tip = tip;
     }
 }

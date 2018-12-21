@@ -14,12 +14,12 @@ import org.a3tn.pregnancy_mobile.R;
 
 import java.util.List;
 
-public class ListViewGlossaryAdapter extends BaseAdapter {
+public class GridViewGlossaryAdapter extends BaseAdapter {
     private Context mContext;
     private List<Glossary> mGlossaries;
     private int images[] ={};
 
-    public ListViewGlossaryAdapter(Context mContext, List<Glossary> mGlossaries) {
+    public GridViewGlossaryAdapter(Context mContext, List<Glossary> mGlossaries) {
         this.mContext = mContext;
         this.mGlossaries = mGlossaries;
     }
@@ -48,24 +48,7 @@ public class ListViewGlossaryAdapter extends BaseAdapter {
             itemView = convertView;
         }
         TextView textView = itemView.findViewById(R.id.tv_glossary);
-        ImageView imageView = itemView.findViewById(R.id.img_glossary);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-
-        ImageView imgIcon = itemView.findViewById(R.id.img_icon);
-        imgIcon.setScaleType(ImageView.ScaleType.FIT_XY);
-
         textView.setText(mGlossaries.get(position).getWord());
-//        imageView.setImageResource(images[position]);
-        Glide
-                .with(mContext)
-                .load(R.drawable.ic_dashboard_black_24dp)
-                .into(imageView );
-
-        Glide
-                .with(mContext)
-                .load(R.drawable.ic_navigation_menu_chevron_right)
-                .into(imgIcon );
-
 
         itemView.setTag(mGlossaries.get(position).getId());
 

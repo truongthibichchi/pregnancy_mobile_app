@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="10dp"
+    android:background="@mipmap/background"
     tools:context=".CookingDetailActivity">
 
     <LinearLayout
@@ -13,53 +14,146 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
+        android:background="@color/white"
         android:layout_margin="10dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollHorizontally="true"
+            android:layout_margin="6dp"
+            android:textStyle="bold"
+            android:id="@+id/tv_cooking_food_name"/>
+
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/img_cooking_detail_picture"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollHorizontally="true"
+            android:layout_margin="6dp"
             android:id="@+id/tv_cooking_detail"/>
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/gradient_background_green"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_cooking_ingredient"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_ingredient"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/white"
+                    />
+
+
+            </LinearLayout>
 
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient_background_green"
+
+                >
 
                 <GridView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gv_cooking_gredient"/>
+                    android:layout_height="150dp"
+                    android:id="@+id/gv_cooking_ingredient"/>
 
             </GridLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/gradient_background_blue"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_cooking_list"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cooking_step"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/white"
+                    />
+
+
+            </LinearLayout>
+
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_background_blue"
+
+                >
 
                 <GridView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/gv_cooking_step"/>
+                    android:layout_height="300dp"
+                    android:id="@+id/gv_cooking_step"
+                    android:elevation="6dp"/>
 
             </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/gradient_bacground_pink">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_cooking_tip"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15dp"
+                    android:textStyle="italic"
+                    />
+
+
+            </LinearLayout>
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="wrap_content"
+                >
                 <GridView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:id="@+id/gv_cooking_tip">
 
                 </GridView>

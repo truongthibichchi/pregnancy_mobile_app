@@ -181,18 +181,6 @@ public class WeekDetailsActivity extends Activity {
 
             Toast.makeText(getApplicationContext(),print, Toast.LENGTH_LONG).show();
         }
-//        String sentence = "Check this answer and you can find the keyword with this code";
-//        String search = "keyword";
-//
-//        if (sentence.toLowerCase().contains(search.toLowerCase())) {
-//            Toast.makeText(getApplicationContext(), "I found the keyword", Toast.LENGTH_SHORT).show();
-//
-//        }
-//        else {
-//
-//            Toast.makeText(getApplicationContext(), "not found", Toast.LENGTH_SHORT).show();
-//
-//        }
     }
 
 

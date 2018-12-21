@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.a3tn.pregnancy_mobile.Model.CookingDetail;
+import org.a3tn.pregnancy_mobile.Model.Cooking;
 import org.a3tn.pregnancy_mobile.R;
 import org.a3tn.pregnancy_mobile.apis.Constants;
 
@@ -17,27 +17,27 @@ import java.util.List;
 
 public class GridViewCookingAdapter extends BaseAdapter {
     private Context context;
-    private List<CookingDetail> cookingDetails;
+    private List<Cooking> cookings;
 
-    public GridViewCookingAdapter(Context context, List<CookingDetail> cookingDetails) {
+    public GridViewCookingAdapter(Context context, List<Cooking> cookings) {
         this.context = context;
-        this.cookingDetails = cookingDetails;
+        this.cookings = cookings;
     }
 
 
     @Override
     public int getCount() {
-        return cookingDetails.size();
+        return cookings.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return cookingDetails.get(position);
+        return cookings.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return cookingDetails.get(position).getId();
+        return cookings.get(position).getId();
     }
 
     @Override
@@ -52,15 +52,15 @@ public class GridViewCookingAdapter extends BaseAdapter {
         ImageView imageView = itemView.findViewById(R.id.img_item_cooking_picture);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        textView.setText(cookingDetails.get(position).getFoodName());
+        textView.setText(cookings.get(position).getFoodName());
 //        imageView.setImageResource(images[position]);
-        String pictureUrl = Constants.STATIC_URL+"foods/"+cookingDetails.get(position).getPicture();
+        String pictureUrl = Constants.STATIC_URL+"foods/"+ cookings.get(position).getPicture();
         Glide
                 .with(context)
                 .load(pictureUrl)
                 .into(imageView);
 
-        itemView.setTag(cookingDetails.get(position));
+        itemView.setTag(cookings.get(position));
 
         return itemView;
     }

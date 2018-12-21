@@ -2,27 +2,23 @@ package org.a3tn.pregnancy_mobile;
 
 import android.app.Activity;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Window;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewGlossaryAdapter;
-import org.a3tn.pregnancy_mobile.CustomAdapter.ListViewSportAdapter;
-import org.a3tn.pregnancy_mobile.Model.Glossary;
+import org.a3tn.pregnancy_mobile.CustomAdapter.GridViewSportAdapter;
 import org.a3tn.pregnancy_mobile.Model.Sport;
 import org.a3tn.pregnancy_mobile.apis.ApiFactory;
 import org.a3tn.pregnancy_mobile.apis.Constants;
 import org.a3tn.pregnancy_mobile.apis.api_services.SportService;
-import org.a3tn.pregnancy_mobile.apis.api_services.SummaryInfoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +28,9 @@ import rx.schedulers.Schedulers;
 
 public class SportActivity extends Activity {
     private EditText etSearch;
-    private ListView lvSport;
+    private GridView gvSport;
     private List<Sport> mSports;
-    private ListViewSportAdapter mAdapter;
+    private GridViewSportAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +39,7 @@ public class SportActivity extends Activity {
         setContentView(R.layout.activity_sport);
 
         etSearch = findViewById(R.id.et_sport);
-        lvSport = findViewById(R.id.lv_sport);
+        gvSport = findViewById(R.id.gv_sport);
         getGlossaryData();
 
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -86,8 +82,8 @@ public class SportActivity extends Activity {
 
                             }
                             mSports =data;
-                            mAdapter = new ListViewSportAdapter(getApplicationContext(), mSports);
-                            lvSport.setAdapter(mAdapter);
+                            mAdapter = new GridViewSportAdapter(getApplicationContext(), mSports);
+                            gvSport.setAdapter(mAdapter);
                         },
                         err-> Toast.makeText(this, err.getMessage(), Toast.LENGTH_SHORT).show()
 
@@ -95,7 +91,7 @@ public class SportActivity extends Activity {
     }
 
     private void setupEventHandler() {
-        lvSport.setOnItemClickListener((parent, view, position, idItem) -> {
+        gvSport.setOnItemClickListener((parent, view, position, idItem) -> {
 //            Intent intent = new Intent(GlossaryActivity.this, WeekDetailsActivity.class);
 //            int idWord = mSports.get(position).getId();
 //            intent.putExtra("id", idWord);

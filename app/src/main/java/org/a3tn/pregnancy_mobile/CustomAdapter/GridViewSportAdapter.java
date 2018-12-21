@@ -15,11 +15,11 @@ import org.a3tn.pregnancy_mobile.apis.Constants;
 
 import java.util.List;
 
-public class ListViewSportAdapter extends BaseAdapter {
+public class GridViewSportAdapter extends BaseAdapter {
     private Context mContext;
     private List<Sport> mSports;
 
-    public ListViewSportAdapter(Context mContext, List<Sport> mSports) {
+    public GridViewSportAdapter(Context mContext, List<Sport> mSports) {
         this.mContext = mContext;
         this.mSports = mSports;
     }
@@ -52,7 +52,6 @@ public class ListViewSportAdapter extends BaseAdapter {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         textView.setText(mSports.get(position).getSportName());
-//        imageView.setImageResource(images[position]);
         String pictureUrl = Constants.STATIC_URL+"sports/"+mSports.get(position).getPicture();
         Glide
                 .with(mContext)
