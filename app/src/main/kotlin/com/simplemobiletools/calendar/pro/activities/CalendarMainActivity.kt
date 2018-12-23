@@ -149,15 +149,16 @@ class CalendarMainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        menu.apply {
-            goToTodayButton = findItem(R.id.go_to_today)
-            findItem(R.id.filter).isVisible = mShouldFilterBeVisible
-            findItem(R.id.go_to_today).isVisible = shouldGoToTodayBeVisible && config.storedView != EVENTS_LIST_VIEW
-        }
+       // menuInflater.inflate(R.menu.menu_main, menu)
+//        menu.apply {
+//            goToTodayButton = findItem(R.id.go_to_today)
+//            findItem(R.id.filter).isVisible = mShouldFilterBeVisible
+//            findItem(R.id.go_to_today).isVisible = shouldGoToTodayBeVisible && config.storedView != EVENTS_LIST_VIEW
+//        }
+//
+//        setupSearch(menu)
 
-        setupSearch(menu)
-        return true
+        return false
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {

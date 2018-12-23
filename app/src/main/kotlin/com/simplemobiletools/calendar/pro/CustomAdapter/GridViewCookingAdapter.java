@@ -54,7 +54,7 @@ public class GridViewCookingAdapter extends BaseAdapter {
 
         textView.setText(cookings.get(position).getFoodName());
 //        imageView.setImageResource(images[position]);
-        String pictureUrl = Constants.STATIC_URL+"foods/"+ cookings.get(position).getPicture();
+        String pictureUrl = cookings.get(position).getPicture();
         Glide
                 .with(context)
                 .load(pictureUrl)

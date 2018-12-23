@@ -51,7 +51,7 @@ public class GridViewSportAdapter extends BaseAdapter {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         textView.setText(mSports.get(position).getSportName());
-        String pictureUrl = Constants.STATIC_URL+"sports/"+mSports.get(position).getPicture();
+        String pictureUrl = mSports.get(position).getPicture();
         Glide
                 .with(mContext)
                 .load(pictureUrl)

@@ -54,7 +54,7 @@ public class GridViewSummaryInfoAdapter extends BaseAdapter {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         textView.setText(mSummaryInfoList.get(position).getWeeks());
-        String pictureUrl = Constants.STATIC_URL+"weeks/"+mSummaryInfoList.get(position).getPicture();
+        String pictureUrl = mSummaryInfoList.get(position).getPicture();
 //        imageView.setImageResource(images[position]);
         Glide
                 .with(mContext)

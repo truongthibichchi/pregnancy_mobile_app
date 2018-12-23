@@ -65,7 +65,7 @@ public class CookingDetailActivity extends AppCompatActivity {
     private void showCookingInfo() {
         tvFoodName.setText(foodName);
         tvDetail.setText(detail);
-        String pictureUrl = Constants.STATIC_URL + "foods/" + picture;
+        String pictureUrl = picture;
         Glide
                 .with(getApplicationContext())
                 .load(pictureUrl)

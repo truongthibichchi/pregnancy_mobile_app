@@ -75,9 +75,11 @@ public class SportActivity extends Activity {
 
                                 int id = jsonObject.get("id").getAsInt();
                                 String sportName = jsonObject.get("sport_name").getAsString();
-                                String detail = jsonObject.get("detail").getAsString();
+                                String benefit = jsonObject.get("benefit").getAsString();
+                                String step = jsonObject.get("step").getAsString();
+                                String note = jsonObject.get("note").getAsString();
                                 String picture = jsonObject.get("picture").getAsString();
-                                data.add(new Sport(id, sportName, detail,picture));
+                                data.add(new Sport(id, sportName, benefit,step, note,picture));
 
                             }
                             mSports =data;
@@ -96,7 +98,7 @@ public class SportActivity extends Activity {
 //            intent.putExtra("id", idWord);
 //            startActivity(intent);
             AlertDialog.Builder builder = new AlertDialog.Builder(SportActivity.this);
-            builder.setMessage(mSports.get(position).getDetail());
+            builder.setMessage(mSports.get(position).getBenefit());
             builder.setCancelable(true);
 
             builder.setNegativeButton(
