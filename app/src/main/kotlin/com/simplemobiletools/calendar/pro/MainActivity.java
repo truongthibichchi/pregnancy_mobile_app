@@ -93,18 +93,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void onClickMenuSport() {
-//        Intent intent = new Intent(MainActivity.this, SportActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, SportActivity.class);
+        startActivity(intent);
     }
 
     private void onClickMenuGlossary() {
-//        Intent intent = new Intent(MainActivity.this, GlossaryActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, GlossaryActivity.class);
+        startActivity(intent);
     }
 
     private void onClickMenuFood() {
-//        Intent intent = new Intent(MainActivity.this, CookingActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, CookingActivity.class);
+        startActivity(intent);
     }
 
     private void onCickMenuSummaryInfo() {
