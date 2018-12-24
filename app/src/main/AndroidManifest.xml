@@ -424,6 +424,7 @@
         <activity android:name=".CookingActivity" />
         <activity android:name=".SportActivity" />
         <activity android:name=".CookingDetailActivity"></activity>
+        <activity android:name=".ExtendActivity"></activity>
     </application>
 
 </manifest>

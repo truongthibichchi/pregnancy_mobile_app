@@ -13,6 +13,8 @@ import com.simplemobiletools.calendar.pro.apis.ApiFactory;
 import com.simplemobiletools.calendar.pro.apis.Constants;
 import com.simplemobiletools.calendar.pro.apis.api_services.SignUpService;
 
+import java.sql.Date;
+
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -31,7 +33,7 @@ public class SignUpActivity extends Activity {
             String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
             String fullname = etFullName.getText().toString();
-            String conceivedDate = etConceivedDate.getText().toString();
+            Date conceivedDate = (Date) etConceivedDate.getText();
             onSignUp(email, password, fullname, conceivedDate);
             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
             startActivity(intent);
@@ -39,7 +41,7 @@ public class SignUpActivity extends Activity {
         });
     }
 
-    private void onSignUp(String email, String password, String fullname, String conceivedDate)
+    private void onSignUp(String email, String password, String fullname, Date conceivedDate)
     {
         ApiFactory.createRetrofitService(
                 SignUpService.class,
