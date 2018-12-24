@@ -2,38 +2,31 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/background"
-    tools:context=".CookingDetailActivity">
+    android:background="@mipmap/background">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="@color/white"
-        android:layout_margin="10dp">
+        android:layout_margin="6dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollHorizontally="true"
             android:layout_margin="6dp"
             android:textStyle="bold"
-            android:id="@+id/tv_cooking_detail_food_name"/>
+            android:id="@+id/tv_sport_detail_sport_name"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/img_cooking_detail_picture"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:id="@+id/tv_cooking_detail"/>
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:id="@+id/img_sport_detail_picture"/>
 
 
 
@@ -55,9 +48,9 @@
                     app:srcCompat="@drawable/ic_cooking_ingredient"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_ingredient"
+                    android:text="Tac dung"
                     android:textSize="15dp"
                     android:layout_marginLeft="20dp"
                     android:textStyle="italic"
@@ -67,20 +60,22 @@
 
             </LinearLayout>
 
-            <GridLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/gradient_background_green"
-
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="8dp"
                 >
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/img_sport_detail_benefit"
+                    />
 
-                <GridView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/gv_cooking_ingredient"/>
+            </androidx.cardview.widget.CardView>
 
-            </GridLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,7 +92,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cooking_step"
+                    android:text="Huong dan"
                     android:textSize="15dp"
                     android:layout_marginLeft="20dp"
                     android:textStyle="italic"
@@ -107,20 +102,20 @@
 
             </LinearLayout>
 
-            <GridLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/gradient_background_blue"
-
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="8dp"
                 >
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/img_sport_detail_step"/>
 
-                <GridView
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:id="@+id/gv_cooking_step"
-                    android:elevation="6dp"/>
+            </androidx.cardview.widget.CardView>
 
-            </GridLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,17 +141,21 @@
 
 
             </LinearLayout>
-            <GridLayout
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="8dp"
                 >
-                <GridView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="350dp"
                     android:layout_height="100dp"
-                    android:id="@+id/gv_cooking_tip">
+                    android:id="@+id/img_sport_detail_note"/>
 
-                </GridView>
-            </GridLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

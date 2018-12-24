@@ -73,9 +73,8 @@ public class GlossaryActivity extends Activity {
         }
         List<Glossary> list = new ArrayList<>();
         for (Glossary glossary : mGlossaries) {
-            if (keyWord.toLowerCase().contains(glossary.getWord().toLowerCase())) {
+            if (glossary.getWord().toLowerCase().contains(keyWord.toLowerCase())) {
                 list.add(glossary);
-                Toast.makeText(this, glossary.getWord(), Toast.LENGTH_SHORT).show();
             }
 
         }

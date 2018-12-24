@@ -409,7 +409,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".LogInActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -417,7 +417,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LogInActivity" />
         <activity android:name=".SummaryInfoActivity" />
         <activity android:name=".WeekDetailsActivity" />
         <activity android:name=".GlossaryActivity" />

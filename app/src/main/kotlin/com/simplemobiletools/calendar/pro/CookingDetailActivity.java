@@ -74,7 +74,7 @@ public class CookingDetailActivity extends AppCompatActivity {
 
     private void findViewByIds() {
         imgPicture = findViewById(R.id.img_cooking_detail_picture);
-        tvFoodName = findViewById(R.id.tv_cooking_food_name);
+        tvFoodName = findViewById(R.id.tv_cooking_detail_food_name);
         tvDetail = findViewById(R.id.tv_cooking_detail);
         gvIngredient = findViewById(R.id.gv_cooking_ingredient);
         gvStep = findViewById(R.id.gv_cooking_step);
