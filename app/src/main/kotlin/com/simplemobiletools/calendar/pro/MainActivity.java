@@ -137,8 +137,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.menu_mom_image:
                 onClickMenuMomImage();
                 break;
+            case R.id.menu_sign_out:
+                onSignOut();
+                break;
         }
         return true;
+    }
+
+    private void onSignOut() {
+        Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+        startActivity(intent);
     }
 
     private void onClickMenuMomImage() {

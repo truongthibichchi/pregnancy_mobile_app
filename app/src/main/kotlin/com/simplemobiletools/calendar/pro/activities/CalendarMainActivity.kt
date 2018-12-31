@@ -149,7 +149,7 @@ class CalendarMainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-       // menuInflater.inflate(R.menu.menu_main, menu)
+//        menuInflater.inflate(R.menu.menu_main, menu)
 //        menu.apply {
 //            goToTodayButton = findItem(R.id.go_to_today)
 //            findItem(R.id.filter).isVisible = mShouldFilterBeVisible

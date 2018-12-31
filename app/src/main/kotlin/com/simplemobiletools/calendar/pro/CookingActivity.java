@@ -34,7 +34,7 @@ public class CookingActivity extends Activity {
     private List<CookingTip> mCookingTips;
 
     private GridView gvCooking;
-    private BottomNavigationView mNavigationView;
+//    private BottomNavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +43,19 @@ public class CookingActivity extends Activity {
         setContentView(R.layout.activity_cooking);
 
         gvCooking = findViewById(R.id.gv_cooking);
-        mNavigationView = findViewById(R.id.navigation_cooking);
+//        mNavigationView = findViewById(R.id.navigation_cooking);
 
-        mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
-            switch (menuItem.getItemId()){
-                case R.id.navigation_cooking_list:
-                    showCookingList();
-                    return true;
-                case R.id.navigation_cooking_schedule:
-                    showCookingSchedule();
-                    return true;
-            }
-            return false;
-        });
+//        mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+//            switch (menuItem.getItemId()){
+//                case R.id.navigation_cooking_list:
+//                    showCookingList();
+//                    return true;
+//                case R.id.navigation_cooking_schedule:
+//                    showCookingSchedule();
+//                    return true;
+//            }
+//            return false;
+//        });
 
         showCookingList();
 

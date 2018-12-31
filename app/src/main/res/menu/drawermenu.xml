@@ -35,4 +35,10 @@
         android:icon="@drawable/ic_navigation_menu_mom_image">
     </item>
 
+    <item
+        android:id="@+id/menu_sign_out"
+        android:title="Đăng xuất">
+    </item>
+
+
 </menu>
