@@ -1,3 +1,5 @@
+Server: https://github.com/truongthibichchi/pregnancy_server
+
 # Simple Calendar
 <img alt="Logo" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="80" />
 
